@@ -3,7 +3,7 @@
     {{ title }} 
   </h1>
   <p>
-    Sponsored by mr.Oppenheimer
+    <span class="sponsor">Sponsored by mr.Oppenheimer</span>
   </p>
 </header>
 <nav>
@@ -28,9 +28,9 @@
 </nav>
 <main>
   <section>
-    <button class='dialog-button' 
-            mat-raised-button (click)="openDialog()" 
-            color="primary">Добавить</button>
+    <button mat-raised-button (click)="openDialog()" 
+            color="primary"
+            class='dialog-button'>Добавить</button>
     <table class="table-main">
       <caption>
         <strong>Кинотеатр</strong>
@@ -43,31 +43,31 @@
         <th>Номер Телефона</th>
         <th>Удаление строки таблицы</th>
       </tr>
-        <tr *ngFor="let item of items; index as i">
+        <tr *ngFor="let item of items">
           <td>{{ item.FilmName }}</td>
           <td>{{ item.CinemaHall }}</td>
-          <td>{{ item.Date }}</td>
+          <td>{{ item.Date | date: 'dd.MM.yyyy' }}</td>
           <td>{{ item.City }}</td>
           <td>{{ item.Tel }}</td>
           <td>
-            <button class="delete-button" 
-                    (click)="deleteItem(item)">
-                <img class='trash-bin' 
-                     src="\assets\images\pink.png">
+            <button (click)="deleteItem(item)"
+                    class="delete-button">
+                <img src="\assets\images\basket.png"
+                     class='trash-bin'>
             </button>
           </td>
         </tr>
     </table>
-    <img class='first-img' 
-         src="\assets\images\1_4_4.ico">
-    <img class='second-img' 
-         src="\assets\images\ryan-gosling-blade-runner2049.gif">
+    <img src="\assets\images\1_4_4.ico"
+         class='first-img'>
+    <img src="\assets\images\ryan-gosling-blade-runner2049.gif"
+         class='second-img' >
   </section>
 </main>
 <footer>
   <div class="asu-help-wanted">
     <p>
-      <span>По техническим вопросам просьба обращаться на почту </span>
+      <span>По техническим вопросам просьба обращаться на почту</span>
       <span class="asu-mail-color">oasu&#64;gubkin.ru</span>
     </p>
   </div>

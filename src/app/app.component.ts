@@ -2,11 +2,11 @@ import {Component, Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 class Item{
-  FilmName: string;
-  CinemaHall: string;
-  Date: Date;
-  City: string;
-  Tel: string;
+  public FilmName: string;
+  public CinemaHall: string;
+  public Date: Date;
+  public City: string;
+  public Tel: string;
 
   constructor(FilmName: string, City: string, CinemaHall: string, Date:Date, Tel: string) {
       this.FilmName= FilmName;
@@ -23,7 +23,7 @@ class Item{
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  title: string = 'Лабораторная работа №2';
+  public title: string = 'Лабораторная работа №2';
 
   constructor(public dialog: MatDialog) {}
   

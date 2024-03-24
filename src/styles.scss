@@ -1,54 +1,23 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$labTEST-primary: mat.define-palette(mat.$indigo-palette);
-$labTEST-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$labTEST-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-
-$labTEST-theme: mat.define-light-theme((
+$lab2Primary: mat.define-palette(mat.$indigo-palette);
+$lab2Accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$lab2Warn: mat.define-palette(mat.$red-palette);
+$lab2Theme: mat.define-light-theme((
   color: (
-    primary: $labTEST-primary,
-    accent: $labTEST-accent,
-    warn: $labTEST-warn,
+    primary: $lab2Primary,
+    accent: $lab2Accent,
+    warn: $lab2Warn,
   ),
   typography: mat.define-typography-config(),
   density: 0
 ));
+@include mat.all-component-themes($lab2Theme);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-
-@include mat.all-component-themes($labTEST-theme);
-
-
-
-$pink: rgb(140, 161, 201);
-$gran-purple: rgba(136, 214, 214, 0.774) ;
-$text: #000000;
-$deep-purple: rgb(44, 11, 119);
-$body-bg: rgba(194, 213, 226, 0.8);
-$table-hover: rgb(21, 71, 138);
-
+$bodyBack: rgba(194, 213, 226, 0.8);
 html, body {
   margin: 0;
   padding: 0;
-  background-color: $body-bg;
+  background-color: $bodyBack;
   height: 100%;
 }
