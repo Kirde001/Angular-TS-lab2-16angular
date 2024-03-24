@@ -1,0 +1,193 @@
+:host {
+
+    $pink: rgb(140, 161, 201);
+    $gran-purple: rgba(136, 214, 214, 0.774) ;
+    $text: #000000;
+    $deep-purple: rgb(44, 11, 119);
+    $body-bg: rgba(194, 213, 226, 0.8);
+    $table-hover: rgb(21, 71, 138);
+    main {
+    height: fit-content;
+    min-height: 680px;
+    background-color: $pink;
+    margin: 30px;
+    margin-top: 20px;
+    border-left: medium solid $gran-purple;
+    border-left-style: groove;
+    border-radius: 5%;
+    border-top: medium solid $gran-purple;
+    position: relative;
+
+    section {
+    height: inherit;
+
+    .dialog-button {
+    position: relative;
+    top: 70px;
+    left: 200px;
+    width: 200px;
+    height: 60px;
+    border: 3px solid $gran-purple;
+    }
+    }
+
+    .table-main {
+    //border: medium solid rgb(94, 38, 146);
+    border: medium solid $gran-purple;
+    position: relative;
+    bottom: 40px;
+    left: 550px;
+    color: $deep-purple;
+    border-radius: 10px;
+
+    td, th{
+    width: 100px;
+    border: 3px solid $table-hover;
+    border-radius: 10%;
+    height:fit-content
+    }
+
+    td {
+    text-align: center;
+
+    .delete-button {
+    background: transparent;
+    border: none !important;
+    font-size: 0;
+
+    .trash-bin {
+    width: 100px;
+    height: 100px;
+    }
+    }
+    }
+
+    th {
+    text-align: center;
+    }
+
+    tr:hover {
+    background-color: $table-hover;
+    color: white;
+    }
+
+    caption {
+    margin: 3px;
+    font-size: xx-large;
+    color: $deep-purple;
+    }
+    }
+
+    .second-img {
+    position: absolute;
+    left: 1600px;
+    bottom: 450px;
+    }
+
+    .first-img {
+    position: absolute;
+    left: 30px;
+    top: 525px;
+    }
+    }
+
+    header {
+    background-color: $pink;
+
+    h1 {
+    margin: 0;
+    text-align: center;
+    color: $deep-purple;
+    }
+    }
+
+    nav {
+    border-bottom: medium solid $gran-purple;
+    border-width: 2.5px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 90%;
+    background-color: $pink;
+
+    li {
+    display: inline-block;
+    margin: 0;
+    }
+
+    ul {
+    margin: 0;
+    }
+
+    .navi {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    width: 200px;
+    text-align: center;
+    background-color: lighten($pink, 15%);
+    transition: background-color 0.2s ease;
+
+    &:hover {
+    background-color: lighten($pink, 10%);
+    text-decoration: underline $deep_purple;
+    }
+    }
+
+    a {
+    outline: none;
+    text-decoration: none;
+
+    &:visited {
+    color: $deep-purple;
+    }
+
+    &:link {
+    color:$text;
+    }
+    }
+    }
+
+    footer {
+    background-color: $pink;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+    border-top: medium solid $gran-purple;
+    border-width: 2.5px;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 15%;
+
+    .asu-help-wanted {
+    text-align: right;
+    padding-right: 30px;
+    font-size: large;
+    font-weight: bold;
+    color: $deep-purple;
+
+    .asu-mail-color {
+    color:blue;
+    }
+    }
+    }
+
+    img { 
+    border-radius: 30%;
+    margin: 0px;
+    position: relative;
+    filter: grayscale(0);
+    transition: 1.88s;
+
+    &:hover {
+    filter: grayscale(1);
+    }
+    }
+
+    p { 
+    margin: 0;
+    padding: 2px;
+    text-align: right;
+    color: $deep-purple;
+    }
+}
