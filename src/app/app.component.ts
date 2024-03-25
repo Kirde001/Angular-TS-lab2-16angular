@@ -1,6 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
+
 class Item{
   public FilmName: string;
   public CinemaHall: string;
@@ -17,12 +18,33 @@ class Item{
   }
 }
 
+export interface Transaction {
+  item: string;
+  cost: number;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+  displayedColumns: string[] = ['demo-position', 'demo-name', 'demo-weight', 'demo-symbol','demo-tel'];
+
+
+  // displayedColumns = ['item', 'cost'];
+  // transactions: Transaction[] = [
+  //   {item: 'Beach ball', cost: 4},
+  //   {item: 'Towel', cost: 5},
+  //   {item: 'Frisbee', cost: 2},
+  //   {item: 'Sunscreen', cost: 4},
+  //   {item: 'Cooler', cost: 25},
+  //   {item: 'Swim suit', cost: 15},
+  // ];
+
+
+
   public title: string = 'Лабораторная работа №2';
 
   constructor(public dialog: MatDialog) {}
@@ -31,6 +53,7 @@ export class AppComponent {
   addItem(FilmName: string, City: string, CinemaHall: string, Date: Date, Tel: string): void {
     this.items.push(new Item(FilmName, City, CinemaHall, Date, Tel));
 }
+  dataSource = this.items;
 
 
 deleteItem(item: Item) {

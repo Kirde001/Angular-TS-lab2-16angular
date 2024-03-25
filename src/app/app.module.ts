@@ -13,6 +13,7 @@ import { provideNgxMask, NgxMaskDirective,NgxMaskPipe} from 'ngx-mask'
 import { AppComponent, DialogContent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { DatePipe } from '@angular/common';
     NgxMaskDirective,
     NgxMaskPipe,
     DatePipe,
+    MatTableModule,
   ],
 
   providers: [

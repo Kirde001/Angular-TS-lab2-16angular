@@ -31,6 +31,38 @@
     <button mat-raised-button (click)="openDialog()" 
             color="primary"
             class='dialog-button'>Добавить</button>
+
+    <!-- <table mat-table [dataSource]="items" class="mat-elevation-z8 demo-table">
+ 
+      <ng-container matColumnDef="demo-position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let item"> {{item.FilmName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let item"> {{item.CinemaHall}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let item"> {{item.Date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let item"> {{item.City}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-tel">
+        <th mat-header-cell *matHeaderCellDef> Tel </th>
+        <td mat-cell *matCellDef="let item"> {{item.Tel}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> -->
+
     <table class="table-main">
       <caption>
         <strong>Кинотеатр</strong>
@@ -67,7 +99,7 @@
 <footer>
   <div class="asu-help-wanted">
     <p>
-      <span>По техническим вопросам просьба обращаться на почту</span>
+      <span>По техническим вопросам просьба обращаться на почту </span>
       <span class="asu-mail-color">oasu&#64;gubkin.ru</span>
     </p>
   </div>
