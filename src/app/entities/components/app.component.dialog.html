@@ -1,0 +1,61 @@
+<mat-dialog-content align="center">
+  <h2>
+    <strong>Добавление данных о кинотеатре</strong>
+  </h2>
+  <br>
+  <form [formGroup]="cinemaForm">
+    <mat-form-field class="form-formatting">
+      <mat-label>Название фильма</mat-label>
+      <input matInput formControlName="filmName" type='text' 
+             pattern='^[A-Za-zА-Яа-яЁё]+$' >
+    </mat-form-field>
+
+    <br>
+    <mat-form-field class="form-formatting">
+      <mat-label>Choose wisely young one</mat-label>
+      <mat-select formControlName="cinemaHall">
+        <mat-option value="IMAX">IMAX</mat-option>
+        <mat-option value="VIP">VIP</mat-option>
+        <mat-option value="РГУ">РГУ</mat-option>
+        <mat-option value="KIRAKOS">KIRAKOS</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form-formatting">
+      <mat-label>Date or dare</mat-label>
+      <input matInput [matDatepicker]="picker" 
+                      [max]="getToday()" 
+                      formControlName="date">
+      <mat-hint>дд.мм.гггг</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form-formatting">
+      <mat-label>We've got a city to burn</mat-label>
+      <input matInput formControlName="city" 
+                      type='text'>
+    </mat-form-field>
+    <br>
+    <br>
+    <section>
+      <mat-checkbox color="primary">Молился ли ты на ночь?</mat-checkbox>
+    </section>
+    <br>
+    <mat-form-field class="form-formatting" >
+      <mat-label >Girl's phone</mat-label>
+      <!-- <span matTextPrefix>+7 &nbsp;</span> -->
+      <input matInput formControlName="tel" 
+                      mask="(000) 000-00-00" 
+                      type='text'
+                      prefix="+7 "
+                      [dropSpecialCharacters]="false"
+                      [showMaskTyped]="true"
+                      >
+    </mat-form-field>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onOkClick()" cdkFocusInitial>Добавить</button>
+  <button mat-button (click)="onNoClick()">Отменить</button>
+</mat-dialog-actions>
