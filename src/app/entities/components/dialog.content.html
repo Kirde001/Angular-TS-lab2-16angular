@@ -8,7 +8,6 @@
       <mat-label>Название фильма</mat-label>
       <input matInput formControlName="filmName" type="text" />
     </mat-form-field>
-
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Наименование зала</mat-label>
@@ -22,18 +21,14 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Дата показа</mat-label>
-      <input
-        matInput
-        [matDatepicker]="picker"
-        [max]="getToday()"
-        formControlName="date"
-      />
+      <input matInput [matDatepicker]="picker"
+                      [max]="getToday()"
+                      formControlName="date"/>
       <mat-hint>дд.мм.гггг</mat-hint>
-      <mat-datepicker-toggle
-        matIconSuffix
-        [for]="picker"
+      <mat-datepicker-toggle matIconSuffix [for]="picker"
       ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker #picker
+      ></mat-datepicker>
     </mat-form-field>
     <br />
     <mat-form-field class="form-formatting">
@@ -48,20 +43,17 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Служебный номер</mat-label>
-      <input matInput
-        formControlName="tel"
-        mask="(000) 000-00-00"
-        type="text"
-        prefix="+7 "
-        [dropSpecialCharacters]="false"
-        [showMaskTyped]="true"
-      />
+      <input matInput [dropSpecialCharacters]="false"
+                      [showMaskTyped]="true"
+                      formControlName="tel"
+                      mask="(000) 000-00-00"
+                      type="text"
+                      prefix="+7 "/>
     </mat-form-field>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Отменить</button>
-  <button mat-button (click)="onOkClick()"
-                     cdkFocusInitial
-                     class="dialog-accept">Сохранить</button>
+  <button mat-button cdkFocusInitial (click)="onOkClick()"
+                                     class="dialog-accept">Сохранить</button>
 </mat-dialog-actions>

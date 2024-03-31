@@ -1,56 +1,55 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatDialog, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose,MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {NativeDateAdapter, MatNativeDateModule,MAT_DATE_LOCALE} from '@angular/material/core';
+import {
+  MatDialog,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogModule,
+} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import {
+  NativeDateAdapter,
+  MatNativeDateModule,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import { provideNgxMask, NgxMaskDirective,NgxMaskPipe} from 'ngx-mask'
-import { AppComponent} from './app.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { AppComponent } from './app.component';
 import { DialogContent } from './entities/components/dialog.content';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
-
-import { FormsModule, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-
-import {MatTableModule} from '@angular/material/table';
+import {
+  FormsModule,
+  FormControl,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DialogContent
-  ],
+  declarations: [AppComponent, DialogContent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatFormFieldModule, 
-    MatInputModule, 
-    FormsModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     MatButtonModule,
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatButtonModule,  
-    MatDatepickerModule, 
-    MatSelectModule, 
+    MatDatepickerModule,
+    MatSelectModule,
     MatCheckboxModule,
     MatDialogModule,
     MatNativeDateModule,
     NgxMaskDirective,
     NgxMaskPipe,
     DatePipe,
-
-    MatTableModule,
-    
-
-    ReactiveFormsModule, 
-    
-
+    ReactiveFormsModule,
   ],
 
   providers: [
@@ -60,23 +59,15 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogContent,
     NativeDateAdapter,
     MatDialog,
-
     Input,
-
-    Validators, 
-    FormControl, 
-
+    Validators,
+    FormControl,
     provideNgxMask(),
-    {provide: MAT_DATE_LOCALE, useValue: 'ru'}, 
+    { provide: MAT_DATE_LOCALE, useValue: 'ru' },
   ],
 
-  bootstrap: [
-    AppComponent
-  ],
-  
-  schemas: [ 
-    CUSTOM_ELEMENTS_SCHEMA 
-  ]
+  bootstrap: [AppComponent],
 
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

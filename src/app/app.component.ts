@@ -1,4 +1,4 @@
-import { Component, DestroyRef, Input } from '@angular/core';
+import { Component, DestroyRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogContent } from './entities/components/dialog.content';
 import { ICinema } from './entities/interfaces/app.interface';
@@ -9,13 +9,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-
-/**
- * Основной компонент приложения
- *
- * @export
- * @class AppComponent
- */
 export class AppComponent {
   /**
    * Заголовок для страницы
@@ -23,30 +16,24 @@ export class AppComponent {
    * @public
    * @type {string}
    */
-
   public title: string = 'Лабораторная работа №2';
-
   /**
    * Массив объектов типа интерфейса
    *
    * @public
    * @type {ICinema[]}
    */
-
   public items: ICinema[] = [];
-
   /**
    * Объявление конструктора
    *
    * @param {MatDialog} dialog - диалоговский сервис
    * @param {_destroyRef} _destroyRef - отписка
    */
-
   constructor(
     private readonly dialog: MatDialog,
     private readonly _destroyRef: DestroyRef
   ) {}
-
   /**
    * Удаление ряда-элемента из таблицы
    *
@@ -56,14 +43,12 @@ export class AppComponent {
    * затем по условию убираем эту строку через метод splice, начиная с нашего индекса
    * @public
    */
-
   public deleteItem(item: ICinema) {
     const index = this.items.findIndex((existingItem) => existingItem === item);
     if (index > -1) {
       this.items.splice(index, 1);
     }
   }
-
   /**
    * Открытие поп-апа (или диалогового окна)
    *
@@ -71,7 +56,6 @@ export class AppComponent {
    * @public
    * @return { void }
    */
-
   public openDialog(): void {
     const initialData: ICinema = {
       filmName: '',
