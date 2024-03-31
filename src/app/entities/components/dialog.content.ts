@@ -5,23 +5,23 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { ICinema } from "../interfaces/app.interface";
 
 @Component({
-    selector: 'app-component-dialog',
-    templateUrl: 'app.component.dialog.html',
-    styleUrls: ['app.component.dialog.scss'],
+    selector: 'dialog-content',
+    templateUrl: 'dialog.content.html',
+    styleUrls: ['dialog.content.scss'],
   })
   export class DialogContent{
 
     cinemaForm: FormGroup;
     
     constructor(
-        private fb: FormBuilder,
-        private dialogRef: MatDialogRef<DialogContent>,
+        private readonly fb: FormBuilder,
+        private readonly dialogRef: MatDialogRef<DialogContent>,
         @Inject(MAT_DIALOG_DATA) public data: ICinema,
     )   {
         this.cinemaForm = this.fb.group({
-            filmName: new FormControl('', Validators.required),
+            filmName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZА-Яа-яЁё ]*')] ),
             cinemaHall: new FormControl('', Validators.required),
-            date: new FormControl(data.date),
+            date: new FormControl(data.date, Validators.required),
             city: new FormControl('', Validators.required),
             tel: new FormControl('', [Validators.required, Validators.pattern(/\d+/)]),
     });
@@ -32,11 +32,7 @@ import { ICinema } from "../interfaces/app.interface";
     }
   
     onOkClick(): void {
-        if (this.cinemaForm.valid) { // Check form validity before closing
-            // const value = {
-            //     filmName: this.cinemaForm.get('filmName').value,
-            //     // ... other form control values
-            //   };
+        if (this.cinemaForm.valid) {
           this.dialogRef.close(this.cinemaForm.value);
         }
       }

@@ -1,4 +1,5 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDialog, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose,MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
@@ -10,7 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { provideNgxMask, NgxMaskDirective,NgxMaskPipe} from 'ngx-mask'
 import { AppComponent} from './app.component';
-import { DialogContent } from './entities/components/app.component.dialog';
+import { DialogContent } from './entities/components/dialog.content';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatePipe } from '@angular/common';
@@ -18,6 +19,7 @@ import { DatePipe } from '@angular/common';
 import { FormsModule, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import {MatTableModule} from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import {MatTableModule} from '@angular/material/table';
     
 
     ReactiveFormsModule, 
+    
 
   ],
 
@@ -57,6 +60,8 @@ import {MatTableModule} from '@angular/material/table';
     MatDialogContent,
     NativeDateAdapter,
     MatDialog,
+
+    Input,
 
     Validators, 
     FormControl, 

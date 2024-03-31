@@ -172,11 +172,11 @@
     border-top-right-radius: 15%;
 
         .asu-help-wanted {
-        text-align: right;
-        padding-right: 30px;
         font-size: large;
         font-weight: bold;
         color: $deepPurple;
+        position: relative;
+        right: 20px;
 
             .asu-mail-color {
             color: blue;
