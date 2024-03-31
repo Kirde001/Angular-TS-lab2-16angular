@@ -1,43 +1,38 @@
-import { FormControl } from "@angular/forms";
+import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import { ICinema } from "../interfaces/app.interface";
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ICinema } from '../interfaces/app.interface';
+
+import { CinemaFormService } from './dialog-form.builder.service';
 
 @Component({
-    selector: 'dialog-content',
-    templateUrl: 'dialog.content.html',
-    styleUrls: ['dialog.content.scss'],
-  })
-  export class DialogContent{
+  selector: 'dialog-content',
+  templateUrl: 'dialog.content.html',
+  styleUrls: ['dialog.content.scss'],
+})
+export class DialogContent {
+  public cinemaForm: FormGroup;
 
-    cinemaForm: FormGroup;
-    
-    constructor(
-        private readonly fb: FormBuilder,
-        private readonly dialogRef: MatDialogRef<DialogContent>,
-        @Inject(MAT_DIALOG_DATA) public data: ICinema,
-    )   {
-        this.cinemaForm = this.fb.group({
-            filmName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZА-Яа-яЁё ]*')] ),
-            cinemaHall: new FormControl('', Validators.required),
-            date: new FormControl(data.date, Validators.required),
-            city: new FormControl('', Validators.required),
-            tel: new FormControl('', [Validators.required, Validators.pattern(/\d+/)]),
-    });
+  constructor(
+    private readonly _formBuilder: CinemaFormService,
+    private readonly _dialogRef: MatDialogRef<DialogContent>,
+    @Inject(MAT_DIALOG_DATA) public data: ICinema
+  ) {
+    this.cinemaForm = this._formBuilder.createCinemaForm(data);
+  }
+
+  public getToday(): string {
+    return new Date().toISOString().split('T')[0];
+  }
+
+  public onOkClick(): void {
+    if (this.cinemaForm.valid) {
+      this._dialogRef.close(this.cinemaForm.value);
     }
-  
-    getToday(): string {
-      return new Date().toISOString().split('T')[0];
-    }
-  
-    onOkClick(): void {
-        if (this.cinemaForm.valid) {
-          this.dialogRef.close(this.cinemaForm.value);
-        }
-      }
-    
-    onNoClick(): void {
-        this.dialogRef.close();
-    }
+  }
+
+  public onNoClick(): void {
+    this._dialogRef.close();
+  }
 }

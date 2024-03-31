@@ -1,9 +1,8 @@
-import {Component, DestroyRef, Input} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { Component, DestroyRef, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogContent } from './entities/components/dialog.content';
 import { ICinema } from './entities/interfaces/app.interface';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
-
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +16,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
  * @export
  * @class AppComponent
  */
-
 export class AppComponent {
-  
   /**
    * Заголовок для страницы
    *
@@ -36,26 +33,26 @@ export class AppComponent {
    * @type {ICinema[]}
    */
 
-  public items: ICinema[] =[];
+  public items: ICinema[] = [];
 
   /**
    * Объявление конструктора
    *
    * @param {MatDialog} dialog - диалоговский сервис
-   * @param {_destroyRef} _destroyRef - отписка 
+   * @param {_destroyRef} _destroyRef - отписка
    */
 
   constructor(
     private readonly dialog: MatDialog,
     private readonly _destroyRef: DestroyRef
-    ) {}
+  ) {}
 
   /**
    * Удаление ряда-элемента из таблицы
-   * 
+   *
    * @method
    * @param { ICinema } item - берем объект интерфейса как параметр item
-   * @description создается константа индекс, который берет индекс удаляемого объекта через строгое сравнение, 
+   * @description создается константа индекс, который берет индекс удаляемого объекта через строгое сравнение,
    * затем по условию убираем эту строку через метод splice, начиная с нашего индекса
    * @public
    */
@@ -69,7 +66,7 @@ export class AppComponent {
 
   /**
    * Открытие поп-апа (или диалогового окна)
-   * 
+   *
    * @method
    * @public
    * @return { void }
@@ -80,23 +77,23 @@ export class AppComponent {
       filmName: '',
       city: '',
       cinemaHall: '',
-      date: new Date(), 
-      tel: ''
+      date: new Date(),
+      tel: '',
     };
-    const dialogRef = this.dialog.open(DialogContent,
-      {
-        height: '645px',
-        width: '600px',
-        data: initialData,
-      }
-    );
-    dialogRef.afterClosed()
-    .pipe(takeUntilDestroyed(this._destroyRef))
-    .subscribe((result: ICinema) => {
-      if (result) {
-        this.items.push(result);
-      }
+
+    const dialogRef = this.dialog.open(DialogContent, {
+      height: '645px',
+      width: '600px',
+      data: initialData,
     });
+
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntilDestroyed(this._destroyRef))
+      .subscribe((result: ICinema) => {
+        if (result) {
+          this.items.push(result);
+        }
+      });
   }
 }
-

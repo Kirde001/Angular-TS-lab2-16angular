@@ -80,21 +80,9 @@
                 filter: grayscale(0);
                 transition: 1.88s;
             
-                    &:hover {
-                    filter: grayscale(1);
-                    }
+                &:hover {
+                filter: grayscale(1);
                 }
-
-            .second-img {
-                position: inherit;
-                left: 1600px;
-                bottom: 450px;
-                }
-        
-            .first-img {
-            position: inherit;
-            left: 30px;
-            top: 525px;
             }
         }
     }
