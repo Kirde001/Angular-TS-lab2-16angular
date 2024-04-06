@@ -6,73 +6,73 @@
     $tableHover: rgb(21, 71, 138);
 
     main {
-    height: fit-content;
-    min-height: 680px;
-    background-color: $lightPurple;
-    margin: 30px;
-    margin-top: 20px;
-    border-left: medium solid $granBlue;
-    border-left-style: groove;
-    border-radius: 5%;
-    border-top: medium solid $granBlue;
-    position: relative;
+        height: fit-content;
+        min-height: 680px;
+        background-color: $lightPurple;
+        margin: 30px;
+        margin-top: 20px;
+        border-left: medium solid $granBlue;
+        border-left-style: groove;
+        border-radius: 5%;
+        border-top: medium solid $granBlue;
+        position: relative;
 
         section {
-        height: inherit;
+            height: inherit;
 
-        .table-main {
-            border: medium solid $granBlue;
-            position: relative;
-            bottom: 40px;
-            left: 550px;
-            color: $deepPurple;
-            border-radius: 10px;
-    
+            .table-main {
+                border: medium solid $granBlue;
+                position: relative;
+                bottom: 40px;
+                left: 550px;
+                color: $deepPurple;
+                border-radius: 10px;
+        
                 td, th{
-                width: 100px;
-                border: 3px solid $tableHover;
-                border-radius: 10%;
-                height: fit-content
+                    width: 100px;
+                    border: 3px solid $tableHover;
+                    border-radius: 10%;
+                    height: fit-content
                 }
     
                 td {
-                text-align: center;
+                    text-align: center;
     
                     .delete-button {
-                    background: transparent;
-                    border: none !important;
-                    font-size: 0;
+                        background: transparent;
+                        border: none !important;
+                        font-size: 0;
     
                         .trash-bin {
-                        width: 100px;
-                        height: 100px;
+                            width: 100px;
+                            height: 100px;
                         }
                     }
                 }
     
                 th {
-                text-align: center;
+                    text-align: center;
                 }
     
                 tr:hover {
-                background-color: $tableHover;
-                color: white;
+                    background-color: $tableHover;
+                    color: white;
                 }
     
                 caption {
-                margin: 3px;
-                font-size: xx-large;
-                color: $deepPurple;
+                    margin: 3px;
+                    font-size: xx-large;
+                    color: $deepPurple;
                 }
             }
 
             .dialog-button {
-            position: relative;
-            top: 70px;
-            left: 200px;
-            width: 200px;
-            height: 60px;
-            border: 3px solid $granBlue;
+                position: relative;
+                top: 70px;
+                left: 200px;
+                width: 200px;
+                height: 60px;
+                border: 3px solid $granBlue;
             }
 
             img { 
@@ -81,19 +81,19 @@
                 transition: 1.88s;
             
                 &:hover {
-                filter: grayscale(1);
+                    filter: grayscale(1);
                 }
             }
         }
     }
 
     header {
-    background-color: $lightPurple;
+        background-color: $lightPurple;
 
         h1 {
-        margin: 0;
-        text-align: center;
-        color: $deepPurple;
+            margin: 0;
+            text-align: center;
+            color: $deepPurple;
         }
 
         .sponsor {
@@ -102,81 +102,81 @@
     }
 
     nav {
-    border-bottom: medium solid $granBlue;
-    border-width: 2.5px;
-    border-bottom-left-radius: 30%;
-    border-bottom-right-radius: 90%;
-    background-color: $lightPurple;
+        border-bottom: medium solid $granBlue;
+        border-width: 2.5px;
+        border-bottom-left-radius: 30%;
+        border-bottom-right-radius: 90%;
+        background-color: $lightPurple;
 
         li {
-        display: inline-block;
-        margin: 0;
+            display: inline-block;
+            margin: 0;
         }
 
         ul {
-        margin: 0;
+            margin: 0;
         }
 
         .navi {
-        padding: 10px;
-        margin: 10px;
-        border-radius: 25px;
-        width: 200px;
-        text-align: center;
-        background-color: lighten($lightPurple, 15%);
-        transition: background-color 0.2s ease;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 25px;
+            width: 200px;
+            text-align: center;
+            background-color: lighten($lightPurple, 15%);
+            transition: background-color 0.2s ease;
 
             &:hover {
-            background-color: lighten($lightPurple, 10%);
-            text-decoration: underline $deepPurple;
+                background-color: lighten($lightPurple, 10%);
+                text-decoration: underline $deepPurple;
             }
         }
 
         a {
-        outline: none;
-        text-decoration: none;
+            outline: none;
+            text-decoration: none;
 
             &:visited {
-            color: $deepPurple;
+                color: $deepPurple;
             }
 
             &:link {
-            color: $text;
+                color: $text;
             }
         }
     }
 
     footer {
-    background-color: $lightPurple;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    height: 30px;
-    width: 100%;
-    padding: 10px;
-    border-top: medium solid $granBlue;
-    border-width: 2.5px;
-    border-top-left-radius: 70%;
-    border-top-right-radius: 15%;
+        background-color: $lightPurple;
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        height: 30px;
+        width: 100%;
+        padding: 10px;
+        border-top: medium solid $granBlue;
+        border-width: 2.5px;
+        border-top-left-radius: 70%;
+        border-top-right-radius: 15%;
 
         .asu-help-wanted {
-        font-size: large;
-        font-weight: bold;
-        color: $deepPurple;
-        position: relative;
-        right: 20px;
+            font-size: large;
+            font-weight: bold;
+            color: $deepPurple;
+            position: relative;
+            right: 20px;
 
             .asu-mail-color {
-            color: blue;
-            text-decoration: none;
+                color: blue;
+                text-decoration: none;
             }
         }
     }
 
     p { 
-    margin: 0;
-    padding: 2px;
-    text-align: right;
-    color: $deepPurple;
+        margin: 0;
+        padding: 2px;
+        text-align: right;
+        color: $deepPurple;
     }
 }

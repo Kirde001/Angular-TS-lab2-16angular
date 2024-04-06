@@ -6,7 +6,9 @@
   <form [formGroup]="cinemaForm">
     <mat-form-field class="form-formatting">
       <mat-label>Название фильма</mat-label>
-      <input matInput formControlName="filmName" type="text" />
+      <input matInput 
+             formControlName="filmName" 
+             type="text"/>
     </mat-form-field>
     <br />
     <mat-form-field class="form-formatting">
@@ -21,11 +23,13 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Дата показа</mat-label>
-      <input matInput [matDatepicker]="picker"
-                      [max]="getToday()"
-                      formControlName="date"/>
+      <input matInput 
+             [matDatepicker]="picker"
+             [max]="getToday()"
+             formControlName="date"/>
       <mat-hint>дд.мм.гггг</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker"
+      <mat-datepicker-toggle matIconSuffix 
+                             [for]="picker"
       ></mat-datepicker-toggle>
       <mat-datepicker #picker
       ></mat-datepicker>
@@ -33,7 +37,9 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Город показа</mat-label>
-      <input matInput formControlName="city" type="text" />
+      <input matInput 
+             formControlName="city" 
+             type="text" />
     </mat-form-field>
     <br />
     <br />
@@ -43,17 +49,21 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Служебный номер</mat-label>
-      <input matInput [dropSpecialCharacters]="false"
-                      [showMaskTyped]="true"
-                      formControlName="tel"
-                      mask="(000) 000-00-00"
-                      type="text"
-                      prefix="+7 "/>
+      <input matInput 
+             [dropSpecialCharacters]="false"
+             [showMaskTyped]="true"
+             formControlName="tel"
+             mask="(000) 000-00-00"
+             type="text"
+             prefix="+7 "/>
     </mat-form-field>
   </form>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Отменить</button>
-  <button mat-button cdkFocusInitial (click)="onOkClick()"
-                                     class="dialog-accept">Сохранить</button>
+  <button mat-button 
+          (click)="onNoClick()">Отменить</button>
+  <button mat-button 
+          cdkFocusInitial 
+          (click)="onOkClick()"
+          class="dialog-accept">Сохранить</button>
 </mat-dialog-actions>

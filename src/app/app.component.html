@@ -10,17 +10,17 @@
   <ul>
     <li>
       <div class="navi">
-        <a href='https://youtu.be/dQw4w9WgXcQ?si=QY5DBvtoVcqwpH2t'>Oh that was cruel dude</a>
+        <a href="https://youtu.be/dQw4w9WgXcQ?si=QY5DBvtoVcqwpH2t">Oh that was cruel dude</a>
       </div>
     </li>
     <li>
       <div class="navi">
-        <a href='https://youtu.be/KKO84c6SbfY?si=nE4XdsXDl4zQVioh'>Kenough</a>
+        <a href="https://youtu.be/KKO84c6SbfY?si=nE4XdsXDl4zQVioh">Kenough</a>
       </div>
     </li>
     <li>
       <div class="navi">
-        <a href='https://youtu.be/vXYVfk7agqU?si_0NbD'>Mr Shrek</a>
+        <a href="https://youtu.be/vXYVfk7agqU?si_0NbD">Mr Shrek</a>
       </div>
     </li>
   </ul>
@@ -28,9 +28,10 @@
 </nav>
 <main>
   <section>
-    <button mat-raised-button (click)="openDialog()" 
+    <button mat-raised-button 
+            (click)="openDialog()"
             color="primary"
-            class='dialog-button'>Добавить</button>
+            class="dialog-button">Добавить</button>
     <table class="table-main">
       <caption>
         <strong>Кинотеатр</strong>
@@ -46,14 +47,14 @@
         <tr *ngFor="let item of items">
           <td>{{ item.filmName }}</td>
           <td>{{ item.cinemaHall }}</td>
-          <td>{{ item.date | date: 'dd.MM.yyyy' }}</td>
+          <td>{{ item.date | date: "dd.MM.yyyy" }}</td>
           <td>{{ item.city }}</td>
           <td>{{ item.tel }}</td>
           <td>
               <button (click)="deleteItem(item)"
-                    class="delete-button">
+                      class="delete-button">
                 <img src="\assets\images\basket.png"
-                     class='trash-bin'>
+                     class="trash-bin">
             </button>
           </td>
         </tr>
@@ -63,7 +64,7 @@
 <footer>
   <div class="asu-help-wanted">
     <p>
-      <span>По техническим вопросам просьба обращаться на почту <a href="mailto:oasu@gubkin.ru" class="asu-mail-color"> oasu&#64;gubkin.ru</a></span>
+      <span>По техническим вопросам просьба обращаться на почту <a href="mailto:oasu@gubkin.ru" class="asu-mail-color">oasu&#64;gubkin.ru</a></span>
     </p>
   </div>
 </footer>

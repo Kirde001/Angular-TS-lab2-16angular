@@ -42,6 +42,7 @@ export class AppComponent {
    * @description создается константа индекс, который берет индекс удаляемого объекта через строгое сравнение,
    * затем по условию убираем эту строку через метод splice, начиная с нашего индекса
    * @public
+   * @type { ICinema} - для existingItem
    */
   public deleteItem(item: ICinema) {
     const index = this.items.findIndex((existingItem) => existingItem === item);
