@@ -23,13 +23,13 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Дата показа</mat-label>
-      <input matInput 
-             [matDatepicker]="picker"
+      <input [matDatepicker]="picker"
              [max]="getToday()"
+             matInput 
              formControlName="date"/>
       <mat-hint>дд.мм.гггг</mat-hint>
-      <mat-datepicker-toggle matIconSuffix 
-                             [for]="picker"
+      <mat-datepicker-toggle [for]="picker"
+                             matIconSuffix 
       ></mat-datepicker-toggle>
       <mat-datepicker #picker
       ></mat-datepicker>
@@ -49,9 +49,9 @@
     <br />
     <mat-form-field class="form-formatting">
       <mat-label>Служебный номер</mat-label>
-      <input matInput 
-             [dropSpecialCharacters]="false"
+      <input [dropSpecialCharacters]="false"
              [showMaskTyped]="true"
+             matInput
              formControlName="tel"
              mask="(000) 000-00-00"
              type="text"
@@ -62,8 +62,8 @@
 <mat-dialog-actions>
   <button mat-button 
           (click)="onNoClick()">Отменить</button>
-  <button mat-button 
+  <button (click)="onOkClick()"
+          mat-button 
           cdkFocusInitial 
-          (click)="onOkClick()"
           class="dialog-accept">Сохранить</button>
 </mat-dialog-actions>

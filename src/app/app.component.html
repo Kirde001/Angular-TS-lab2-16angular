@@ -28,8 +28,8 @@
 </nav>
 <main>
   <section>
-    <button mat-raised-button 
-            (click)="openDialog()"
+    <button (click)="openDialog()"
+            mat-raised-button 
             color="primary"
             class="dialog-button">Добавить</button>
     <table class="table-main">
@@ -64,7 +64,9 @@
 <footer>
   <div class="asu-help-wanted">
     <p>
-      <span>По техническим вопросам просьба обращаться на почту <a href="mailto:oasu@gubkin.ru" class="asu-mail-color">oasu&#64;gubkin.ru</a></span>
+      <span>По техническим вопросам просьба обращаться на почту</span>
+      <a href="mailto:oasu@gubkin.ru" 
+         class="asu-mail-color"> oasu&#64;gubkin.ru</a>
     </p>
   </div>
 </footer>
